@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
+import { getAllWords } from '../DataProcessing';
 
 class InputPage extends Component {
-    state = {}
+
+    componentDidMount() {
+        const words = getAllWords([2, 3, 4]);
+        this.sendData(words);
+    }
+
+    sendData = (words) => {
+        this.props.getResult(words);
+    }
+
     render() {
         return (
             <div className="container">

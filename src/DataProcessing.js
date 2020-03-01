@@ -23,7 +23,6 @@ export function getAllWords(numberArray) {
     let found_words = [];
 
     const wordArray = wordGenerator(letters, progress, current_word, limit, found_words);
-    console.log(wordArray);
     return wordArray;
 }
 
