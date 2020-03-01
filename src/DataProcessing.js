@@ -11,15 +11,16 @@ const keypadMapping = [
     ['w', 'x', 'y', 'z']
 ];
 
-export function getAllWords(numberArray) {
-    var letters = [];
-    for (let i = 0; i < numberArray.length; i++) {
-        letters.push(keypadMapping[numberArray[i]]);
+export function getAllWords(numbers) {
+    const numberStr = numbers.toString();
+    let letters = [];
+    for (let i = 0; i < numberStr.length; i++) {
+        letters.push(keypadMapping[numberStr[i]]);
     }
 
     let progress = 0;
     let current_word = '';
-    let limit = numberArray.length;
+    let limit = numberStr.length;
     let found_words = [];
 
     const wordArray = wordGenerator(letters, progress, current_word, limit, found_words);

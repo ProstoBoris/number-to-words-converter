@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { getAllWords } from '../DataProcessing';
 
 class InputPage extends Component {
+    state = { inputValue: '' };
 
-    componentDidMount() {
-        const words = getAllWords([2, 3, 4]);
+    updateInputValue = (event) => {
+        this.setState({ inputValue: event.target.value });
+    }
+
+    submitNumbers = () => {
+        const words = getAllWords(this.state.inputValue);
         this.sendData(words);
     }
 
