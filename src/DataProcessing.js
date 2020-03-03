@@ -12,19 +12,25 @@ const keypadMapping = [
 ];
 
 export function getAllWords(numbers) {
-    const numberStr = numbers.toString();
-    let letters = [];
-    for (let i = 0; i < numberStr.length; i++) {
-        letters.push(keypadMapping[numberStr[i]]);
-    }
+    // imitate API call with Promise
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
 
-    let progress = 0;
-    let current_word = '';
-    let limit = numberStr.length;
-    let found_words = [];
+            const numberStr = numbers.toString();
+            let letters = [];
+            for (let i = 0; i < numberStr.length; i++) {
+                letters.push(keypadMapping[numberStr[i]]);
+            }
 
-    const wordArray = wordGenerator(letters, progress, current_word, limit, found_words);
-    return wordArray;
+            let progress = 0;
+            let current_word = '';
+            let limit = numberStr.length;
+            let found_words = [];
+
+            const wordArray = wordGenerator(letters, progress, current_word, limit, found_words);
+            resolve(wordArray);
+        }, 1000)
+    })
 }
 
 function wordGenerator(letters, progress, current_word, limit, found_words) {

@@ -9,8 +9,9 @@ class InputPage extends Component {
     }
 
     submitNumbers = () => {
-        const words = getAllWords(this.state.inputValue);
-        this.sendData(words);
+        getAllWords(this.state.inputValue).then(res => {
+            this.sendData(res);
+        });
     }
 
     sendData = (words) => {
