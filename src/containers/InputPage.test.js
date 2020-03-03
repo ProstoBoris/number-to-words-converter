@@ -5,6 +5,7 @@ import Adapter from 'enzyme-adapter-react-16';
 
 import InputPage from './InputPage';
 import Word from './../components/Word';
+import { getAllWords } from '../DataProcessing';
 
 configure({ adapter: new Adapter() });
 
@@ -29,5 +30,14 @@ describe('<InputPage />', () => {
         wrapper.find('#clearBtn').simulate('click');
         expect(wrapper.state('inputValue')).toEqual('');
         expect(wrapper.find(Word)).toHaveLength(0);
+    });
+
+    it('should submit numbers and send data on clicking "Submit" button', () => {
+        const instance = wrapper.instance();
+        jest.spyOn(instance, 'submitNumbers');
+        jest.spyOn(instance, 'sendData');
+        wrapper.find('#submitBtn').simulate('click');
+        expect(instance.submitNumbers).toHaveBeenCalled;
+        expect(instance.sendData).toHaveBeenCalled;
     });
 });
