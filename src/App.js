@@ -10,7 +10,6 @@ class App extends Component {
 
   onGetResult = (childData) => {
     this.setState({ words: [...childData] });
-    console.log(childData);
   }
 
   render() {
