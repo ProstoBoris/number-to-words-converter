@@ -15,7 +15,7 @@ describe('<ResultPage />', () => {
         wrapper = shallow(<ResultPage />);
     });
 
-    it('should render without crashing', () => {
+    it('should render ResultPage without crashing', () => {
         shallow(<ResultPage />);
     });
 

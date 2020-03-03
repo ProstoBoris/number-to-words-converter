@@ -14,7 +14,9 @@ class InputPage extends Component {
     }
 
     sendData = (words) => {
-        this.props.getResult(words);
+        if (this.props.getResult) {
+            this.props.getResult(words);
+        }
     }
 
     clearInput = () => {
@@ -31,11 +33,11 @@ class InputPage extends Component {
                         <input type="number"
                             className="form-control" value={this.state.inputValue}
                             onChange={this.updateInputValue} />
-                        <button type="button" className="btn btn-secondary"
+                        <button id="clearBtn" type="button" className="btn btn-secondary"
                             onClick={this.clearInput}>
                             Clear
                         </button>
-                        <button type="button" className="btn btn-success"
+                        <button id="submitBtn" type="button" className="btn btn-success"
                             onClick={this.submitNumbers}>
                             Submit
                         </button>
