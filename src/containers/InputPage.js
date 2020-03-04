@@ -33,7 +33,7 @@ class InputPage extends Component {
                 <div className="row">
                     <div className="col-sm-4 offset-sm-4">
                         <h4>Please enter a number:</h4>
-                        <input type="number"
+                        <input type="number" min="0" max="99999"
                             className="form-control" value={this.state.inputValue}
                             onChange={this.updateInputValue} />
                         <button id="clearBtn" type="button" className="btn btn-secondary"
