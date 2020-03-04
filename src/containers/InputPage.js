@@ -9,10 +9,10 @@ class InputPage extends Component {
     }
 
     submitNumbers = () => {
-        if (this.props.updateLoading) this.props.updateLoading(true);
+        if (this.props.updateLoading) this.props.updateLoading(true); // display loading spinner
         getAllWords(this.state.inputValue).then(res => {
-            this.sendData(res);
-            if (this.props.updateLoading) this.props.updateLoading(false);
+            this.sendData(res); // pass obtained words to send them to App.js
+            if (this.props.updateLoading) this.props.updateLoading(false); // hide loading spinner
         });
     }
 

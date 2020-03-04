@@ -10,7 +10,7 @@ const resultPage = (props) => {
         </div>
     );
 
-    const getStyle = () => {
+    const getStyle = () => { // helper method to show/hide loading spinner
         if (props.loading) {
             return {
                 display: props.loading ? 'none' : 'block'
@@ -28,7 +28,7 @@ const resultPage = (props) => {
                             return <Word word={word} key={index} />
                         })
                     }</div>
-                </div> : (<img className="img-fluid"
+                </div> : (<img className="img-fluid" // display keypad image when word list is not displayed
                     src={keypadImg}
                     style={getStyle()}
                     alt="phone keypad" />)}
