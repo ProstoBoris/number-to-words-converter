@@ -23,7 +23,7 @@ const resultPage = (props) => {
             {props.words.length ?
                 <div className="container result-conrainer">
                     <h4>List of Words</h4>
-                    <div className="row" style={getStyle()}>{
+                    <div className="row word-list" style={getStyle()}>{
                         props.words.map((word, index) => {
                             return <Word word={word} key={index} />
                         })
