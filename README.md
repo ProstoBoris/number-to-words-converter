@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The application can convert an entered number into a list of corresponding words in the style
 of <a href="https://en.wikipedia.org/wiki/Phoneword" target="_blank" rel="noopener noreferrer">Phonewords</a>.
+Can be used as a tool for marketing specialists to create easy-to-remember phone numbers.
 
 ## Available Scripts
 
