@@ -22,6 +22,10 @@ body {
   margin: 10px;;
 }
 
+button:disabled {
+  cursor: default;
+}
+
 img.img-fluid {
   opacity: 0.8;
 }
