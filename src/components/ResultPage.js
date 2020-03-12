@@ -10,30 +10,26 @@ const resultPage = (props) => {
         </div>
     );
 
-    const getStyle = () => { // helper method to show/hide loading spinner
-        if (props.loading) {
-            return {
-                display: props.loading ? 'none' : 'block'
-            }
-        }
-    }
-
-    return (props.words ?
+    return (
         <div>
-            {props.words.length ?
-                <div className="container result-conrainer">
-                    <h4>List of Words</h4>
-                    <div className="row word-list" style={getStyle()}>{
-                        props.words.map((word, index) => {
-                            return <Word word={word} key={index} />
-                        })
-                    }</div>
-                </div> : (<img className="img-fluid" // display keypad image when word list is not displayed
-                    src={keypadImg}
-                    style={getStyle()}
-                    alt="phone keypad" />)}
+            {props.words && !props.loading ?
+                <div>
+                    {props.words.length ?
+                        <div className="container result-conrainer">
+                            <h4>List of Words</h4>
+                            <div className="row word-list">{
+                                props.words.map((word, index) => {
+                                    return <Word word={word} key={index} />
+                                })
+                            }</div>
+                        </div> : (
+                            <img className="img-fluid" // display keypad image when word list is not displayed
+                                src={keypadImg}
+                                alt="phone keypad" />
+                        )}
+                </div> : null}
             {props.loading ? loading : ''}
-        </div> : null
+        </div>
     );
 }
 
